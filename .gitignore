@@ -1,0 +1,51 @@
+# ===========================
+# Default Collab Ignore Rules
+# ===========================
+
+# OS Generated
+# ============
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+/Library/*
+/Build/*
+/Temp/*
+# Visual Studio / MonoDevelop generated
+# =====================================
+[Ee]xported[Oo]bj/
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+/.vs/*
+# Unity generated
+# ===============
+[Oo]bj/
+[Bb]uild
+sysinfo.txt
+*.stackdump
+.vs/TumblePop_Freelance/v15/Server/sqlite3/storage.ide-wal
+.vs/TumblePop_Freelance/v15/Server/sqlite3/storage.ide-shm
+.vs/TumblePop_Freelance/v15/Server/sqlite3/storage.ide
+.vs/TumblePop_Freelance/v15/Server/sqlite3/db.lock
+UIElementsSchema/UnityEngine.UIElements.xsd
+UIElementsSchema/UnityEditor.UIElements.xsd
+UIElementsSchema/UIElements.xsd
+Assets/TextMesh Pro/Resources.meta
+Assets/Images/UpgradeMenu/Thumbs.db.meta
+Assets/Images/UpgradeMenu/Info/Thumbs.db.meta
+Assets/Images/Slices Updated/07-Leaderboard/Thumbs.db.meta
+Assets/Images/Slices Updated/03-Fix Popup/icons.meta
+Assets/Images/Slices Updated/02-Gameplay/Thumbs.db.meta
+Assets/Images/Slices Updated/02-Gameplay/Popup/Thumbs.db.meta
+Assets/Images/Slices Updated/01-Main Menu/Thumbs.db.meta
+Assets/Images/Slices Updated/00-Splash/Thumbs.db.meta
