@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Security.Cryptography;
 using TMPro.EditorUtilities;
 using UnityEditor;
 using UnityEngine;
@@ -43,17 +44,8 @@ public class CommonMethods : MonoBehaviour
         Instantiate(Resources.Load(_path), Vector3.zero, Quaternion.identity);
     }
 
-    public void InstantiateUI_MainMenu()
-    {
-        Toolbox.GameManager.InstantiateUI_MainMenu();
-    }
+    public void DestroyCurrentOpject() {
 
-    public void InstantiateUI_HUD()
-    {
-        Toolbox.GameManager.InstantiateUI_HUD();
-    }
-    public void InstantiateUI_Loading()
-    {
-        Toolbox.GameManager.InstantiateUI_Loading();
+        Destroy(this.gameObject);
     }
 }

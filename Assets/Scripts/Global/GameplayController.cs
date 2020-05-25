@@ -93,6 +93,9 @@ public class GameplayController : MonoBehaviour {
                     return;
                 }
 
+                Instantiate(Resources.Load(Constants.effectsFolderPath + Constants.effectName_TileMatch), _tileController.transform.position + new Vector3(0,0,-1), Quaternion.identity);
+                Instantiate(Resources.Load(Constants.effectsFolderPath + Constants.effectName_TileMatch), lastTileController.transform.position + new Vector3(0, 0, -1), Quaternion.identity);
+
             }
             else {
 
