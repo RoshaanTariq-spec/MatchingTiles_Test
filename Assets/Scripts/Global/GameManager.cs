@@ -51,17 +51,17 @@ public class GameManager : MonoBehaviour {
 
 	public void InstantiateUI_MainMenu()
 	{
-		Instantiate(Resources.Load(Constants.menuFolderPath + Constants.uiName_MainMenu), Vector3.zero, Quaternion.identity);
+		Instantiate(Resources.Load(Constants.uiFolderPath + Constants.uiName_MainMenu), Vector3.zero, Quaternion.identity);
 	}
 
 	public void InstantiateUI_HUD()
 	{
-		Instantiate(Resources.Load(Constants.menuFolderPath + Constants.uiName_HUD), Vector3.zero, Quaternion.identity);
+		Instantiate(Resources.Load(Constants.uiFolderPath + Constants.uiName_HUD), Vector3.zero, Quaternion.identity);
 	}
 
 	public void InstantiateUI_Loading()
 	{
-		Instantiate(Resources.Load(Constants.menuFolderPath + Constants.uiName_Loading), Vector3.zero, Quaternion.identity);
+		Instantiate(Resources.Load(Constants.uiFolderPath + Constants.uiName_Loading), Vector3.zero, Quaternion.identity);
 	}
 
 	#endregion

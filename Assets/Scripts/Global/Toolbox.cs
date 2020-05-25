@@ -9,7 +9,7 @@ public class Toolbox : MonoBehaviour {
     private static GameManager gameManager;
     private static SoundManager soundManager;
     private static UserPrefs userPrefs;
-    private static GameplayScript gameplayScript;
+    private static GameplayController gameplayController;
 
 
     public static GameManager GameManager {
@@ -25,8 +25,9 @@ public class Toolbox : MonoBehaviour {
         get { return userPrefs; }
     }
 
-    public static GameplayScript GameplayScript {
-        get { return gameplayScript; }
+    public static GameplayController GameplayController
+    {
+        get { return gameplayController; }
     }
 
     void Awake()
@@ -37,7 +38,7 @@ public class Toolbox : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    public static void Set_GameplayScript (GameplayScript game) {
-        gameplayScript = game;
+    public static void Set_GameplayScript (GameplayController game) {
+        gameplayController = game;
     }
 }

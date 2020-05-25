@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Constants : MonoBehaviour {
 
-    public const string menuFolderPath = "UI/";
+    public const string uiFolderPath = "UI/";
+    public const string scriptablesFolderPath = "ScriptableObj/";
 
     public const int menuSceneIndex = 1;
     public const int gameSceneIndex = 2;

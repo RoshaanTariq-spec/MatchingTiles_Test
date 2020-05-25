@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class UserPrefs : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private const string currentLevelPropertyName = "currentLevel";
+
+
+    public int Get_CurrentLevel()
     {
-        
+        if (PlayerPrefs.HasKey(currentLevelPropertyName))
+        {
+            return PlayerPrefs.GetInt(currentLevelPropertyName);
+        }
+        else {
+
+            Debug.LogError("There is no " + currentLevelPropertyName + " in Prefs");
+            Set_CurrentLevel(0);
+            return 0;
+        }        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Set_CurrentLevel(int val) {
+
+        PlayerPrefs.SetInt(currentLevelPropertyName, val);
     }
+
 }
