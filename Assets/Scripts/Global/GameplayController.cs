@@ -15,8 +15,16 @@ public class GameplayController : MonoBehaviour {
     private Sprite lastTileIcon;
     private TileController lastTileController;
 
+    [HideInInspector]
     [SerializeField] private int score = 0;
+    [HideInInspector]
     [SerializeField] private int requiredScore = 0;
+
+
+    [HideInInspector]
+    [SerializeField] private int curMoves = 0;
+    [HideInInspector]
+    [SerializeField] private int maxMoves = 0;
 
     void Awake() {
 
@@ -28,6 +36,10 @@ public class GameplayController : MonoBehaviour {
         Initialize_Level();
     }
 
+
+    /// <summary>
+    /// Run in start and Completely hadnle the level initialization
+    /// </summary>
     public void Initialize_Level() {
 
         int curLevel = Toolbox.UserPrefs.Get_CurrentLevel();
@@ -37,18 +49,21 @@ public class GameplayController : MonoBehaviour {
         Level curLevelData = (Level)Resources.Load(Constants.scriptablesFolderPath + (curLevel + 1).ToString());
         
         requiredScore = curLevelData.images.Length;
+        maxMoves = curLevelData.maxMoves;
+
+        Toolbox.HUDListner.Set_MaxMovesTxt(maxMoves);
 
         List<Sprite> tileImage = new List<Sprite>();
-        Debug.Log("requiredScore = " + requiredScore);
-
         TileController[] tilesControllers = curLayout.GetComponentsInChildren<TileController>();
 
+        //Piling up all the images to be set into the level in a list
         foreach (var item in curLevelData.images)
         {
             tileImage.Add((Sprite) item);
             tileImage.Add((Sprite) item);
         }
 
+        //Setting the images 1 - 1 to tiles in random order
         foreach (var item in tilesControllers)
         {
             Sprite randImg = tileImage[UnityEngine.Random.Range(0, tileImage.Count)];
@@ -58,24 +73,31 @@ public class GameplayController : MonoBehaviour {
         }
     }
 
-    public void Check_ShowTile(Sprite _lastTileIcon, TileController _lastTileController)
+    /// <summary>
+    /// Complete checking of the tiles matching or keeping in stack to check the next one
+    /// </summary>
+    /// <param name="_tileIcon"> tile icon that is pressed</param>
+    /// <param name="_tileController">tile controller that is pressed</param>
+    public void Check_ShowTile(Sprite _tileIcon, TileController _tileController)
     {
+        curMoves++;
+        Toolbox.HUDListner.Set_CurMovesTxt(curMoves);
+
         if (lastTileIcon && lastTileController)
         {
-            if (lastTileIcon == _lastTileIcon)
+            if (lastTileIcon == _tileIcon)
             {
                 if (++score >= requiredScore) {
 
-                    Debug.Log("Level Complete");
-                    Debug.Log("RS = " + requiredScore);
-                    Debug.Log("S = " + score);
+                    Toolbox.GameManager.InstantiateUI_LevelComplete();
+                    return;
                 }
 
             }
             else {
 
                 lastTileController.HideTile();
-                _lastTileController.HideTile();
+                _tileController.HideTile();
             }
 
 
@@ -85,9 +107,14 @@ public class GameplayController : MonoBehaviour {
         }
         else {
 
-            lastTileIcon = _lastTileIcon;
-            lastTileController = _lastTileController;
+            lastTileIcon = _tileIcon;
+            lastTileController = _tileController;
 
+        }
+
+        if (curMoves >= maxMoves) {
+
+            Toolbox.GameManager.InstantiateUI_LevelFail();
         }
     }
 }

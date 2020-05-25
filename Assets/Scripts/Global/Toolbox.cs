@@ -10,6 +10,7 @@ public class Toolbox : MonoBehaviour {
     private static SoundManager soundManager;
     private static UserPrefs userPrefs;
     private static GameplayController gameplayController;
+    private static HUDListner hudListner ;
 
 
     public static GameManager GameManager {
@@ -30,6 +31,11 @@ public class Toolbox : MonoBehaviour {
         get { return gameplayController; }
     }
 
+    public static HUDListner HUDListner
+    {
+        get { return hudListner; }
+    }
+
     void Awake()
     {
         gameManager = GetComponent<GameManager>();
@@ -38,7 +44,12 @@ public class Toolbox : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    public static void Set_GameplayScript (GameplayController game) {
-        gameplayController = game;
+    public static void Set_GameplayScript (GameplayController _game) {
+        gameplayController = _game;
+    }
+
+    public static void Set_HUD(HUDListner _hud)
+    {
+        hudListner = _hud;
     }
 }

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
-[RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Button))]
+//[RequireComponent(typeof(Image))]
+//[RequireComponent(typeof(Animator))]
+//[RequireComponent(typeof(Button))]
 public class TileController : MonoBehaviour
 {
     private Sprite iconImg;
 
-    //[HideInInspector]
+    [HideInInspector]
     [SerializeField] private bool isShown = false;
 
     private Image img;
+    //private SpriteRenderer img;
     private Animator anim;
 
     public Sprite IconImg { get => iconImg; set => iconImg = value; }

@@ -64,6 +64,20 @@ public class GameManager : MonoBehaviour {
 		Instantiate(Resources.Load(Constants.uiFolderPath + Constants.uiName_Loading), Vector3.zero, Quaternion.identity);
 	}
 
+	public void InstantiateUI_Pause()
+	{
+		Instantiate(Resources.Load(Constants.uiFolderPath + Constants.uiName_Pause), Vector3.zero, Quaternion.identity);
+	}
+
+	public void InstantiateUI_LevelComplete()
+	{
+		Instantiate(Resources.Load(Constants.uiFolderPath + Constants.uiName_LevelComplete), Vector3.zero, Quaternion.identity);
+	}
+
+	public void InstantiateUI_LevelFail()
+	{
+		Instantiate(Resources.Load(Constants.uiFolderPath + Constants.uiName_LevelFail), Vector3.zero, Quaternion.identity);
+	}
 	#endregion
 
 

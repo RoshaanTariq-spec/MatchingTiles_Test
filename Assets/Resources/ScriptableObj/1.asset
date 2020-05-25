@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f7d89f887fc7a42b7a99eb4b3d89e0, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  maxMoves: 5
+  maxMoves: 12
   images:
   - {fileID: 21300000, guid: 51e2a399831333b478ec978ee598bf0e, type: 3}
   - {fileID: 21300002, guid: 51e2a399831333b478ec978ee598bf0e, type: 3}
