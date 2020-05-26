@@ -6026,7 +6026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1176155942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6052,9 +6052,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffects: {fileID: 0}
+  music: {fileID: 0}
   menuBG: {fileID: 8300000, guid: 52261e6afd79abc47a2e8c5c62ede2f0, type: 3}
   gameBG: {fileID: 0}
   buttonPress: {fileID: 0}
+  tilePress: {fileID: 0}
+  tileMatchSuccess: {fileID: 0}
+  tileMatchFail: {fileID: 0}
+  levelComplete: {fileID: 0}
+  levelFail: {fileID: 0}
 --- !u!114 &1176155944
 MonoBehaviour:
   m_ObjectHideFlags: 0

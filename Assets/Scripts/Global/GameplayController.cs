@@ -33,6 +33,8 @@ public class GameplayController : MonoBehaviour {
 
     void Start() {
 
+        Toolbox.Soundmanager.PlayMusic_Game();
+
         Initialize_Level();
     }
 
@@ -87,6 +89,9 @@ public class GameplayController : MonoBehaviour {
         {
             if (lastTileIcon == _tileIcon)
             {
+                Toolbox.Soundmanager.PlaySound(Toolbox.Soundmanager.tileMatchSuccess);
+
+
                 if (++score >= requiredScore) {
 
                     Toolbox.GameManager.InstantiateUI_LevelComplete();
@@ -98,6 +103,7 @@ public class GameplayController : MonoBehaviour {
 
             }
             else {
+                Toolbox.Soundmanager.PlaySound(Toolbox.Soundmanager.tileMatchFail);
 
                 lastTileController.HideTile();
                 _tileController.HideTile();

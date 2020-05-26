@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,6 +34,8 @@ public class TileController : MonoBehaviour
         
         if (isShown)
             return;
+
+        Toolbox.Soundmanager.PlaySound(Toolbox.Soundmanager.tilePress);
 
         ShowTile();
 

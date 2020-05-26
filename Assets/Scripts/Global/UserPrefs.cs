@@ -15,7 +15,7 @@ public class UserPrefs : MonoBehaviour
         }
         else {
 
-            Debug.LogError("There is no " + currentLevelPropertyName + " in Prefs");
+            Debug.Log("There is no " + currentLevelPropertyName + " in Prefs. Initializing one.");
             Set_CurrentLevel(0);
             return 0;
         }        

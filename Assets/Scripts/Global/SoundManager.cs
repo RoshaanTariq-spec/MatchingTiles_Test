@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour {
 
 	[Header("Audio Sources")]
 	public AudioSource soundEffects;
+	public AudioSource music;
 
 	[Header("BG Clips")]
 	public AudioClip menuBG;
@@ -14,6 +15,13 @@ public class SoundManager : MonoBehaviour {
 
 	[Header("Sound Clips")]
 	public AudioClip buttonPress;
+	public AudioClip tilePress;
+	public AudioClip tileMatchSuccess;
+	public AudioClip tileMatchFail;
+
+	public AudioClip levelComplete;
+	public AudioClip levelFail;
+
 
 	public void Mute(){
 
@@ -44,5 +52,18 @@ public class SoundManager : MonoBehaviour {
 
 	public void Stop_PlayingSound(){
 		soundEffects.Stop ();
+	}
+
+	public void PlayMusic_Menu() {
+
+		music.clip = menuBG;
+		music.Play();
+	}
+
+	public void PlayMusic_Game()
+	{
+
+		music.clip = gameBG;
+		music.Play();
 	}
 }

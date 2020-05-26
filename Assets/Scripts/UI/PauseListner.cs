@@ -17,16 +17,19 @@ public class PauseListner : MonoBehaviour
 
     public void OnPress_Home()
     {
+        Toolbox.Soundmanager.PlaySound(Toolbox.Soundmanager.buttonPress);
         Toolbox.GameManager.Load_MenuScene();
     }
 
     public void OnPress_Restart()
     {
+        Toolbox.Soundmanager.PlaySound(Toolbox.Soundmanager.buttonPress);
         Toolbox.GameManager.Load_GameScene();
     }
 
     public void OnPress_Resume()
     {
+        Toolbox.Soundmanager.PlaySound(Toolbox.Soundmanager.buttonPress);
         Destroy(this.gameObject);
     }
 }

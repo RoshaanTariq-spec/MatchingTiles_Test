@@ -32,6 +32,8 @@ public class HUDListner : MonoBehaviour
 
     public void OnPress_Pause() {
 
+        Toolbox.Soundmanager.PlaySound(Toolbox.Soundmanager.buttonPress);
+
         Toolbox.GameManager.InstantiateUI_Pause();
     }
 }
