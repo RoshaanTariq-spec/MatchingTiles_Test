@@ -1,7 +1,4 @@
 ﻿using System.Collections;
-using System.Security.Cryptography;
-using TMPro.EditorUtilities;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
